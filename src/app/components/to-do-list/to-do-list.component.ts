@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
 
-interface Task {
-  description: string;
-  priority: 'low' | 'high';
-  isDone: boolean;
-}
+import { Task } from '../interfaces';
 
 @Component({
   selector: 'app-to-do-list',
@@ -39,9 +35,7 @@ export class ToDoListComponent {
   constructor() {
   }
 
-  markAsDone(task: Task) {
-    if (task) {
-      task.isDone = true;
-    }
+  showMessage(task: Task) {
+    console.log(`${task.description} is done. GOOD JOB!`);
   }
 }
