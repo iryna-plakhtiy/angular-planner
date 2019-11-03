@@ -1,8 +1,5 @@
 import {
   Component,
-  EventEmitter,
-  Input,
-  Output
 } from '@angular/core';
 
 import { Task } from '../interfaces';
@@ -14,8 +11,8 @@ import { Task } from '../interfaces';
 })
 export class TaskComponent {
 
-@Input() task: Task;
-@Output() done = new EventEmitter<Task>();
+  task: Task;
+  //done = new EventEmitter<Task>();
 
   constructor() {
   }
@@ -23,7 +20,6 @@ export class TaskComponent {
   markAsDone(task: Task) {
     if (task) {
       task.isDone = true;
-      this.done.emit(task);
     }
   }
 }
