@@ -14,8 +14,8 @@ import { Task } from '../interfaces';
 })
 export class TaskComponent {
 
-@Input() task: Task;
-@Output() done = new EventEmitter<Task>();
+  @Input() task: Task;
+  @Output() done = new EventEmitter<Task>();
 
   constructor() {
   }
