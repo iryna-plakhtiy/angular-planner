@@ -1,17 +1,15 @@
 <div class="list">
   <h2>To do list</h2>
-  <div *ngFor="let task of tasks" class="item">
+  <div class="item">
     <div>
-      <span [ngSwitch]="task.priority">
-        <img *ngSwitchCase="'low'" src="assets/down-arrow.png" alt="low"/>
-        <img *ngSwitchCase="'high'" src="assets/up-arrow.png" alt="high"/>
+      <span>
+        <img src="assets/down-arrow.png" alt="low"/>
       </span>
-      <b>{{task.description}}</b>
+      <b>description</b>
     </div>
     <hr/>
-    <div>Status: {{task.isDone ? 'Done' : 'To do'}}</div>
-    <button *ngIf="!task.isDone"
-            (click)="markAsDone(task)">
+    <div>Status: done or to do</div>
+    <button (click)="markAsDone(null)">
       Done
     </button>
   </div>

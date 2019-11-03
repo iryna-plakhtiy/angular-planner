@@ -6,8 +6,7 @@ import { ToDoListComponent } from './components/to-do-list/to-do-list.component'
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ToDoListComponent
+    AppComponent
   ],
   imports: [
     BrowserModule
