@@ -4,7 +4,7 @@
       <img *ngSwitchCase="'low'" src="assets/down-arrow.png" alt="low"/>
       <img *ngSwitchCase="'high'" src="assets/up-arrow.png" alt="high"/>
     </span>
-    <b>{{task.description}}</b>
+    <b>{{task.description | uppercase}}</b>
   </div>
   <hr/>
   <div>Status: {{task.isDone ? 'Done' : 'To do'}}</div>
