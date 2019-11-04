@@ -11,13 +11,11 @@ import {TasksService} from '../../services/tasks.service';
 export class ToDoListComponent implements OnInit {
   tasks: Task[] = [];
 
-  constructor(private tasksService: TasksService) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.tasksService.getTasks().then((items) => {
-      this.tasks = items;
-    });
+    // get tasks from TasksService here
   }
 
   showMessage(task: Task) {
