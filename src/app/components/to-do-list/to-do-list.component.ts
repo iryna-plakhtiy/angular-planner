@@ -1,38 +1,23 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import { Task } from '../interfaces';
+import {TasksService} from '../../services/tasks.service';
 
 @Component({
   selector: 'app-to-do-list',
   templateUrl: './to-do-list.component.html',
   styleUrls: ['./to-do-list.component.scss']
 })
-export class ToDoListComponent {
+export class ToDoListComponent implements OnInit {
+  tasks: Task[] = [];
 
-  tasks: Task[] = [
-    {
-      description: 'Buy groceries',
-      priority: 'low',
-      isDone: false
-    },
-    {
-      description: 'Call mom',
-      priority: 'high',
-      isDone: true
-    },
-    {
-      description: 'Book a hotel room',
-      priority: 'high',
-      isDone: false
-    },
-    {
-      description: 'Finish homework',
-      priority: 'low',
-      isDone: false
-    }
-  ];
+  constructor(private tasksService: TasksService) {
+  }
 
-  constructor() {
+  ngOnInit(): void {
+    this.tasksService.getTasks().then((items) => {
+      this.tasks = items;
+    });
   }
 
   showMessage(task: Task) {
